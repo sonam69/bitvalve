@@ -14,10 +14,20 @@
     .table_header {padding: 0 12px 0 6px;}
 }
 
+.table_wrapper {overflow-x: hidden;}
+
 .listingTable {
     font-size: 14px;
     font-weight: 500;
     color: #1d1d1c;
+}
+
+@media (max-width: 767.98px) {
+    .listingTable thead {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .listingTable tbody tr {
@@ -27,10 +37,25 @@
 
 .listingTable.dataTable.no-footer {border-bottom: 0;}
 
-.listingTable thead {
+/* .listingTable thead {
     position: absolute;
     opacity: 0;
     pointer-events: none;
+} */
+th {
+    background: gray;
+    border: 0 !important;
+}
+/* th.notitle {
+    font-size: 0;
+    background-image: none !important;
+    pointer-events: none;
+} */
+th:first-child {
+    border-top-left-radius: 25px;
+}
+th:last-child {
+    border-top-right-radius: 25px;
 }
 
 .listingTable tbody tr td:first-child {position: relative;}
@@ -49,9 +74,9 @@
     padding-top: 50px;
 }
 
-.listingTable tbody td:nth-child(2) > * {
-    padding-left: 16px;
-}
+/* .listingTable tbody td:not(.td-mobile-absolute) > * {
+    background: red !important;
+} */
 
 .listingTable td.child ul{
     padding: 0 0 0 16px;
@@ -72,6 +97,9 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
     margin-right: 5px;
     transform: translateY(-2px);
 }
+
+.listingTable .iconText {min-width: 42px;}
+
 
 .listingTable .iconText div {
     display: inline-flex;
@@ -96,6 +124,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
     border-radius: 50%;
     background: #ececec;
     margin-right: 8px;
+    flex: none;
 }
 
 .listingTable .price_text {
@@ -116,15 +145,15 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
     color: #3cc13f;
 }
 
-.dataTables_wrapper {
+/* .dataTables_wrapper {
     max-height: 616px;
     overflow-y: auto;
     overflow-x: hidden;
-}
+} */
 
 @media (min-width: 768px) {
 
-    .dataTables_wrapper {max-height: 675px;}
+    /* .dataTables_wrapper {max-height: 675px;} */
 
     .listingTable td:not(.child) > * {
         height: 104px;
@@ -153,7 +182,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
     .listingTable td {padding: 0 0 12px !important;}
 }
 
-@media (max-width: 1199.98px) {
+/* @media (max-width: 1199.98px) {
     .listingTable tbody td:not(.child):first-child > * {
         position: absolute;
         left: 16px;
@@ -163,7 +192,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
         white-space: nowrap;
         background: none;
     }
-}
+} */
 
 @media (min-width: 1200px) {
 
@@ -175,4 +204,69 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
     }
 
     .listingTable tbody td > * {padding-left: 24px;}
+}
+
+
+@media (max-width: 767.98px) {
+    th.th-mobile-hide {
+        font-size: 0 !important;
+        background-image: none !important;
+        pointer-events: none !important;
+        padding: 0 !important;
+    }
+    td.td-mobile-absolute {padding: 0 !important;}
+    td.td-mobile-absolute > * {
+        position: absolute !important;
+        left: 16px !important;
+        bottom: 69px !important;
+        height: auto !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        background: none !important;
+    }
+    .listingTable tbody td.td-mobile-absolute + td > * {
+        padding-left: 16px;
+        min-width: 58px;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    th.th-tablet-hide {
+        font-size: 0 !important;
+        background-image: none !important;
+        pointer-events: none !important;
+        padding: 0 !important;
+    }
+    td.td-tablet-absolute {padding: 0 !important;}
+    td.td-tablet-absolute > * {
+        position: absolute !important;
+        left: 16px !important;
+        bottom: 67px !important;
+        height: auto !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        background: none !important;
+    }
+    .listingTable tbody td.td-tablet-absolute + td > * {
+        padding-left: 16px;
+        min-width: 58px;
+    }
+}
+@media (min-width: 1200px) {
+    th.th-desktop-hide {
+        font-size: 0 !important;
+        background-image: none !important;
+        pointer-events: none !important;
+        padding: 0 !important;
+    }
+    td.td-desktop-absolute {padding: 0 !important;}
+    td.td-desktop-absolute > * {
+        position: absolute !important;
+        left: 16px !important;
+        bottom: 65px !important;
+        height: auto !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        background: none !important;
+    }
 }

@@ -145,11 +145,11 @@ var listings = {
     //     {responsivePriority: 1, targets: 5},
     // ],
     visibility: [
-        {className: 'all', targets: 0},
+        {className: 'all th-mobile-hide th-tablet-hide td-mobile-absolute td-tablet-absolute', targets: 0},
         {className: 'all', targets: 1},
         {className: 'all', targets: 2},
         {className: 'all', targets: 3},
-        {className: 'all', targets: 5},
+        {className: 'all th-mobile-hide th-tablet-hide th-desktop-hide', targets: 5},
     ],
     items: [
         [ "<div class='user'><div style='background-color: #ffa365'></div>BamzCB</div>", "<div class='iconText'><div style='background: #f7943d;'>B</div><span class='mobile-hide'>Bitcoin</span></div>", "<div class='iconText'><div style='background: #3db3f7;'>P</div><span class='mobile-hide'>Paypal</span></div>", "<div class='price'><span>$</span><div class='price_text'>10558.82 USD<small><strong>4%</strong> below market price</small></div></div>", "<div>10.00 - 100.00 USD</div>", "<div><button class='btn'>Buy</button></div>" ],
@@ -165,8 +165,8 @@ var listings = {
 }
 
 var table = $('#table_trades').DataTable({
-        scroller: true,
-        scrollY: "100%",
+        // scroller: true,
+        // scrollY: "100%",
         destroy: true,
         responsive: true,
         paginate: false,

@@ -1,9 +1,9 @@
 .overflow-hidden {overflow: hidden !important;}
 
-@media (max-width: 777.98px) {
+@media (max-width: 767.98px) {
     .mobile-hide {display: none !important;}
 }
-@media (min-width: 778px) and (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
     .tablet-hide {display: none !important;}
 }
 @media (min-width: 1200px) {
