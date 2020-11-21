@@ -190,7 +190,7 @@ h2 {
     font-size: 22px;
     font-weight: 600;
     color: #004237;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 }
 
 button {
@@ -217,8 +217,52 @@ button,
     main {padding-top: 15px;}
 
     main > .container > * {margin-bottom: 40px;}
+
+    h2 {margin-bottom: 35px;}
+
+    thead th::before {
+        content: "";
+        height: calc(100% + 10px);
+        width: 100%;
+        background: #ececec;
+        position:absolute;
+        left:0;
+        top:0;
+        z-index: -1;
+    }
+    thead th::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #f7f7f7;
+        position:absolute;
+        left:0;
+        top:0;
+        z-index: -1;
+    }
+
 }
 
 @media (min-width: 1200px) {
-    h2 {margin-bottom: 20px;}
+    h2 {margin-bottom: 22px;}
+    /*Not sure if this should apply to all pages*/
+    /****Box scroll only fix****/
+    main {
+        overflow: hidden;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .table_wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-y: hidden;
+    }
+    .dataTables_wrapper  {
+        overflow-y: auto;
+        height: 100%;
+    }
 }

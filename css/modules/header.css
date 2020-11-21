@@ -67,14 +67,14 @@ header .logo img {width: 100%;}
         align-items: center;
     }
 
-    .header_actions * + * {margin-left: 28px;}
+    .header_actions > * + * {margin-left: 28px;}
 
 }
 
 @media (min-width: 1200px) {
     header {justify-content: flex-end;}
 
-    .header_actions * + * {margin-left: 36px;}
+    .header_actions > * + * {margin-left: 36px;}
 
     header .logo {left: 40px;}
 

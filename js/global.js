@@ -164,32 +164,43 @@ var listings = {
     ]
 }
 
-var table = $('#table_trades').DataTable({
-        // scroller: true,
-        // scrollY: "100%",
-        destroy: true,
-        responsive: true,
-        paginate: false,
-        searching: false,
-        lengthChange: false,
-        info: false,
-        data: listings.items,
-        columns: listings.columns,
-        columnDefs: listings.visibility,
-        order: listings.order,
-        "initComplete": function( settings, json ) {
-            console.log("Table initialised");
-          }
-});
+listing_table_options = {
+    // destroy: true,
+    responsive: true,
+    paginate: false,
+    searching: false,
+    lengthChange: false,
+    info: false,
+    data: listings.items,
+    columns: listings.columns,
+    columnDefs: listings.visibility,
+    order: listings.order,
+}
+
+var table = $('#table_trades').DataTable(listing_table_options);
 
 $.each(table.columns().header().toArray(), function(index) {
-    if (listings.sorting.includes(this.innerText))
-        $('#table_sorting select').append('<option class="sorting_options_item" value="' + index + '">' + this.innerText + '</option>')
+    var column_title = this.innerText.toLowerCase();
+    if (listings.sorting.includes(column_title)) {
+        $('#table_sorting select').append('<option class="sorting_options_item" value="' + index + '">' + column_title + '</option>');
+    }
 });
 $('.sorting_options_item').on('click', function() {
     table.order([$(this).attr('data-value'), 'asc']);
     table.draw();
 });
+
+function table_sorting_init() {
+    $.each(table.columns().header().toArray(), function(index) {
+        var column_title = this.innerText.toLowerCase();
+        if (listings.sorting.includes(column_title))
+            $('#table_sorting select').append('<option class="sorting_options_item" value="' + index + '">' + column_title + '</option>')
+    });
+    $('.sorting_options_item').on('click', function() {
+        table.order([$(this).attr('data-value'), 'asc']);
+        table.draw();
+    });
+}
 
 $('#table_sorting .select2').select2({
     minimumResultsForSearch: -1,
