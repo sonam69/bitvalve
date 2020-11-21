@@ -1,0 +1,224 @@
+/******************Reset******************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*vertical-align: baseline;*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, div {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*,
+*:focus {
+    outline: none;
+}
+
+a {text-decoration: none;}
+
+/******************bootstrap css needed******************/
+/* .container{
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
+    width: 100%;
+}
+@media (min-width:576px){
+    .container{max-width:540px}
+}
+@media (min-width:768px){
+    .container{max-width:720px}
+}
+@media (min-width:992px){
+    .container{max-width:960px}
+}
+@media (min-width:1200px){
+    .container{max-width:1140px}
+} */
+/*custom container*/
+.container{
+    padding-right:16px;
+    padding-left:16px;
+    margin-right:auto;
+    margin-left:auto;
+    width: 100%;
+}
+@media (min-width:576px){
+    .container{max-width:540px}
+}
+@media (min-width:768px){
+    .container{max-width:754px}
+}
+@media (min-width:992px){
+    .container{max-width:960px}
+}
+@media (min-width:1200px){
+    .container{
+        padding-left: 256px;
+        padding-right: 28px;
+        max-width:100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    main > .container {padding: 0;}
+}
+
+/******************fonts******************/
+/*font-family: 'Anonymous Pro', monospace;*/
+/*font-family: 'faktum', monospace;*/
+
+@font-face {
+    font-family: 'faktum';
+    font-weight: 500;
+    src: url("../../fonts/faktum/Faktum-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'faktum';
+    font-weight: 600;
+    src: url("../../fonts/faktum/Faktum-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'faktum';
+    font-weight: 700;
+    src: url("../../fonts/faktum/Faktum-Bold.otf") format("opentype");
+}
+
+/******************Base******************/
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'faktum', monospace;
+    font-size: 14px;
+    color: #1d1d1c;
+    background: #ececec;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow-y: auto;
+}
+
+main {flex-grow: 1;}
+
+main > .container > * {margin-bottom: 28px;}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #767676 rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #767676;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+h2 {
+    font-family: 'faktum', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: #004237;
+    margin-bottom: 28px;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    background-color: transparent;
+    outline: none !important;
+}
+
+a {color: inherit;}
+
+a,
+button,
+.noTapHighlight {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+    main {padding-top: 15px;}
+
+    main > .container > * {margin-bottom: 40px;}
+}
+
+@media (min-width: 1200px) {
+    h2 {margin-bottom: 20px;}
+}

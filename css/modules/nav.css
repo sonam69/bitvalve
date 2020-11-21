@@ -1,0 +1,119 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 60px;
+    background: white;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 10;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 16px;
+    font-weight: 700;
+}
+.expanded-menu nav {transform: none;}
+
+nav ul {
+    height: 100%;
+    overflow-y: auto;
+}
+
+nav li {
+
+}
+
+nav li a {
+    display: block;
+    padding: 16px 24px;
+    opacity: 0.5;
+    /* color: #002f22; */
+    color: rgba(0, 47, 34, 0.7);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+nav li a.active,
+nav li a:hover {
+    background-color: rgba(137, 224, 100, 0.3);
+    color: #002f22;
+    opacity: 1;
+}
+
+
+.nav_footer {padding: 0 16px;}
+
+.nav_footer_lang {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 13px 0;
+}
+
+.nav_footer_lang a {
+    display: inline-block;
+    padding: 8px;
+    margin-right: 2px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.nav_footer_lang a.active {opacity: 1;}
+
+.nav_footer_actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0, 66, 55, 0.25);
+    padding: 20px 0;
+}
+
+.nav_footer_actions button {margin-right: 20px;}
+
+@media (min-width: 768px) {
+    nav {
+        width: 416px;
+        padding-top: 100px;
+    }
+
+    nav li a {
+        font-size: 18px;
+        padding: 20px 40px
+    }
+
+    .nav_footer_lang {padding: 30px 0;}
+
+    .nav_footer_lang a:hover {opacity: 1;}
+}
+
+@media (min-width: 1200px) {
+    nav {
+        height: auto;
+        width: 256px;
+        padding-right: 20px;
+        background: none;
+        transform: none;
+        transition: none;
+    }
+
+    nav li a {
+        font-size: 16px;
+        position: relative;
+    }
+    nav li a::before {
+        content: "";
+        height: 14px;
+        width: 14px;
+        background: #89e064;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        transition: transform 0.3s ease;
+    }
+    nav li a.active, 
+    nav li a:hover {background: none;}
+    nav li a.active::before, 
+    nav li a:hover::before {transform: translate(0, -50%);}
+}

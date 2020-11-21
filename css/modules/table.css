@@ -1,0 +1,178 @@
+
+/* .listingTable thead {display: none;} */
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+    .table_header {padding:0;}
+}
+
+@media (min-width: 1200px) {
+    .table_header {padding: 0 12px 0 6px;}
+}
+
+.listingTable {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1c;
+}
+
+.listingTable tbody tr {
+    position: relative;
+    background: none !important;
+}
+
+.listingTable.dataTable.no-footer {border-bottom: 0;}
+
+.listingTable thead {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.listingTable tbody tr td:first-child {position: relative;}
+
+.listingTable td:not(.child) {padding: 8px 0 0 !important;}
+.listingTable tbody tr:first-child td {padding-top: 0px !important;}
+
+.listingTable td > * {
+    background: white;
+}
+
+.listingTable td:not(.child) > * {
+    display: flex;
+    align-items: center;
+    height: 115px;
+    padding-top: 50px;
+}
+
+.listingTable tbody td:nth-child(2) > * {
+    padding-left: 16px;
+}
+
+.listingTable td.child ul{
+    padding: 0 0 0 16px;
+}
+
+.listingTable .dtr-title {
+    margin-bottom: 6px;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {content: none;}
+
+.listingTable .user {font-weight: 600;}
+
+.listingTable .user div {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+    transform: translateY(-2px);
+}
+
+.listingTable .iconText div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    color: white;
+    line-height: 14px;
+}
+
+.listingTable .price > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #ececec;
+    margin-right: 8px;
+}
+
+.listingTable .price_text {
+    display: flex;
+    flex-direction: column;
+    color: #004237;
+    font-weight: 600;
+}
+
+.listingTable .price_text small {
+    font-size: 12px;
+    font-weight: 500;
+    color: #868686;
+}
+
+.listingTable .price_text small strong {
+    font-weight: 700;
+    color: #3cc13f;
+}
+
+.dataTables_wrapper {
+    max-height: 616px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+
+    .dataTables_wrapper {max-height: 675px;}
+
+    .listingTable td:not(.child) > * {
+        height: 104px;
+        padding-top: 27px;
+    }
+
+    .listingTable .iconText div {
+        height: 28px;
+        width: 28px;
+        margin-right: 12px;
+    }
+    
+    .listingTable .price > span {
+        height: 28px;
+        width: 28px;
+        margin-right: 12px;
+    }
+
+    .listingTable .price_text {font-size: 18px;}
+
+    .listingTable .price_text small {
+        font-size: 14px;
+        margin-top: 3px;
+    }
+
+    .listingTable td {padding: 0 0 12px !important;}
+}
+
+@media (max-width: 1199.98px) {
+    .listingTable tbody td:not(.child):first-child > * {
+        position: absolute;
+        left: 16px;
+        top: 30px;
+        height: auto;
+        padding: 0;
+        white-space: nowrap;
+        background: none;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .dataTables_wrapper {max-height: 720px;}
+
+    .listingTable td:not(.child) > * {
+        height: 94px;
+        padding-top: 0;
+    }
+
+    .listingTable tbody td > * {padding-left: 24px;}
+}

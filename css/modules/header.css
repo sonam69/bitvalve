@@ -1,0 +1,81 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    padding: 0 21px 0 16px; /*right + 5 cause of scrollbar*/
+    position: relative;
+}
+
+.burger {
+    width: 30px;
+    padding: 0;
+    height: 50px;
+    position: relative;
+    z-index: 15;
+    cursor: pointer;
+}
+
+.burger::before,
+.burger::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #002f22;
+    transition: width 0.3s linear, transform 0.3s ease;
+}
+
+.burger::after {margin-top: 7px;}
+
+.expanded-menu .burger::before,
+.expanded-menu .burger::after {width: 85%;}
+
+.expanded-menu .burger::before {
+    transform: translateY(5px) rotate(45deg);
+}
+.expanded-menu .burger::after {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+header .logo {
+    width: 115px;
+    position: relative;
+    z-index: 15;
+}
+header .logo img {width: 100%;}
+
+@media (min-width: 768px) {
+    header {
+        height: 100px;
+        padding: 0 45px 0 40px; /*right + 5 cause of scrollbar*/
+    }
+
+    header .logo {
+        width: 140px;
+        position: absolute;
+        left: 108px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .header_actions {
+        display: flex;
+        align-items: center;
+    }
+
+    .header_actions * + * {margin-left: 28px;}
+
+}
+
+@media (min-width: 1200px) {
+    header {justify-content: flex-end;}
+
+    .header_actions * + * {margin-left: 36px;}
+
+    header .logo {left: 40px;}
+
+}
