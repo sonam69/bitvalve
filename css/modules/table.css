@@ -74,6 +74,15 @@ th:last-child {
     background: white;
 }
 
+.listingTable tbody td:last-child  > *{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.listingTable tbody td:first-child  > *{
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
 .listingTable td:not(.child) > * {
     display: flex;
     align-items: center;
@@ -153,6 +162,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
 
 
 @media (min-width: 768px) {
+    .listingTable td:not(.child) {padding-top: 12px !important;}
 
     .listingTable td:not(.child) > * {
         height: 104px;
@@ -197,6 +207,12 @@ thead th:last-child::after {
     }
 
     .listingTable tbody td > * {padding-left: 24px;}
+
+    /**Row hover effect**/
+
+    table.dataTable tbody tr {transition: box-shadow 0.3s ease;}
+
+    table.dataTable tbody tr:hover {box-shadow: 0 4px 12px 0 rgba(0, 66, 55, 0.18);}
 }
 
 
@@ -235,6 +251,11 @@ thead th:last-child::after {
     thead th:first-child::after,
     thead th.th-mobile-hide:first-child + th::after {
         border-top-left-radius: 10px;
+    }
+
+    .listingTable tbody td.td-mobile-absolute:first-child + td > * {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
     }
 
 }
@@ -282,6 +303,11 @@ thead th:last-child::after {
         border-top-left-radius: 10px;
     }
 
+    .listingTable tbody td.td-tablet-absolute:first-child + td > * {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
     #content {overflow-y: auto !important;}
 }
 @media (min-width: 1200px) {
@@ -310,8 +336,14 @@ thead th:last-child::after {
         justify-content: flex-end;
         padding-right: 24px;
     }
-    th:not(.td-desktop-absolute) {padding-left: 24px !important}
 
+    .listingTable tbody td.td-desktop-absolute:first-child + td > * {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    th:not(.td-desktop-absolute) {padding-left: 24px !important}
+    
     th {
         position: sticky;
         top: 0;
@@ -321,4 +353,6 @@ thead th:last-child::after {
     thead th.th-desktop-hide:first-child + th::after {
         border-top-left-radius: 10px;
     }
+    
+
 }

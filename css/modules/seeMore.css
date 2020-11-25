@@ -6,16 +6,17 @@
 
 .seeMore_wrapper {
     height: 100%;
-    padding: 0 9px 32px;
+    padding: 10px 9px 32px;
     overflow: hidden;
     position: relative;
     background: inherit;
     transition: height 0.5s ease;
-    z-index: 2;
+    z-index: 5;
 }
 .seeMore_wrapper::after {
     content: "";
-    height: 42px;
+    /* height: 42px; */
+    height: 32px;
     width: 100%;
     background: #fbfbfb;
     position: absolute;
@@ -24,6 +25,26 @@
     transition: height 0.3s ease;
 }
 .seeMore_wrapper.is-open::after {height: 0;}
+
+.overlay-seemore {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 47, 34, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 4;
+    transition: opacity 1s ease, width 0s ease 1s;
+}
+
+.seeMore_wrapper.is-open + .overlay-seemore {
+    width: 100%;
+    opacity: 1;
+    pointer-events: initial;
+    transition: opacity 1s ease;
+}
 
 .seeMore_indicator {
     position: absolute;
@@ -64,5 +85,10 @@
 }
 
 @media (min-width: 1200px) {
-    .seeMore_wrapper {padding-right: calc(100% - 470px);}
+    .seeMore {min-height: 100%;}
+
+    .seeMore_wrapper {
+        padding-top: 13px;
+        padding-right: calc(100% - 470px);
+    }
 }

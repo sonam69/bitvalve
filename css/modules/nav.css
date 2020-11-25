@@ -95,6 +95,7 @@ nav li a:hover {
         background: none;
         transform: none;
         transition: none;
+        z-index: 2;
     }
 
     nav li a {
@@ -114,6 +115,5 @@ nav li a:hover {
     }
     nav li a.active, 
     nav li a:hover {background: none;}
-    nav li a.active::before, 
-    nav li a:hover::before {transform: translate(0, -50%);}
+    nav li a.active::before {transform: translate(0, -50%);}
 }

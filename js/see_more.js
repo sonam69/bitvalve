@@ -6,10 +6,14 @@ function SeeMore(element) {
         return;
     this.isOpen = false;
     this.see_more = $(element);
+    this.overlay = this.see_more.find('.overlay-seemore');
     this.item_wrapper = this.see_more.find('.seeMore_wrapper');
     this.item_wrapper_height;
     this.see_more_indicator = this.see_more.find('.seeMore_indicator');
     this.see_more_indicator.on('click', function() {
+        that.showHidden();
+    });
+    this.overlay.on('click', function() {
         that.showHidden();
     })
     this.children = this.see_more.find('.seeMore_item');

@@ -145,6 +145,7 @@
                                     </div>
                                     <div class="seeMore_indicator noTapHighlight" data-hiddenItems="0"><span>More</span><span>Close</span></div>
                                 </div>
+                                <div class="overlay-seemore"></div>
                             </div>
                         </div>
                         <div class="sidebyside_right">
